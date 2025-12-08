@@ -3,67 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Victor Benito — AI Portfolio</title>
 
   <style>
+    :root {
+      --bg: #0f172a;
+      --text: #e2e8f0;
+      --accent: #38bdf8;
+      --card: #1e293b;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px auto;
+      font-family: "Inter", sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    h2 {
+      color: var(--accent);
+    }
+
+    .container {
       max-width: 800px;
-      line-height: 1.6;
+      margin: 0 auto;
+      padding: 20px;
     }
-    h1, h2 {
-      color: #2e3a4f;
+
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      border: 1px solid #334155;
     }
-    .section {
-      margin-bottom: 40px;
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
-    .project {
-      border-left: 4px solid #6272a4;
-      padding-left: 12px;
-      margin-bottom: 20px;
+
+    .project-title {
+      margin: 0;
+      font-size: 1.4rem;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #64748b;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Hi, I'm [Your Name]</h1>
-  <p>AI Student • ML Enthusiast • Curious Builder</p>
+  <header>
+    <h1>Victor Benito</h1>
+    <p>AI Student • Machine Learning • LLMs • Data Science</p>
+  </header>
 
-  <div class="section">
-    <h2>About Me</h2>
-    <p>
-      I am an AI student passionate about machine learning, LLMs, and building intelligent systems.
-      I enjoy creating projects that combine creativity and technology.
-    </p>
+  <div class="container">
+
+    <section>
+      <h2>About Me</h2>
+      <div class="card">
+        <p>
+          I'm an AI student passionate about deep learning, LLMs, and building intelligent tools.
+          I enjoy solving real problems through practical machine learning projects.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+
+      <div class="card">
+        <p class="project-title">⚡ Project 1 — Cool AI App</p>
+        <p>A short description that explains what it does and what you learned.</p>
+        <a href="#">View project →</a>
+      </div>
+
+      <div class="card">
+        <p class="project-title">🔍 Project 2 — ML Model</p>
+        <p>Explain what the model predicts, how you trained it, and tools used.</p>
+        <a href="#">Read more →</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>CV</h2>
+      <div class="card">
+        <p><a href="cv.pdf" target="_blank">Download my CV (PDF)</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Email: victorbenitosegura@gmail.com</p>
+        <p>LinkedIn: <a href="#">linkedin.com/in/victor-benito-segura
+        <p>GitHub: <a href="#">github.com/Victorbs18
+      </div>
+    </section>
+
   </div>
 
-  <div class="section">
-    <h2>Projects</h2>
-
-    <div class="project">
-      <h3>Project 1 — Your Cool AI Project</h3>
-      <p>A short description about what it does and how you built it.</p>
-    </div>
-
-    <div class="project">
-      <h3>Project 2 — Another ML Project</h3>
-      <p>Description of your second project.</p>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>CV</h2>
-    <p><a href="cv.pdf" target="_blank">Download my CV</a></p>
-  </div>
-
-  <div class="section">
-    <h2>Contact</h2>
-    <p>Email: you@example.com</p>
-    <p>LinkedIn: <a href="#">your-link</a></p>
-    <p>GitHub: <a href="#">github.com/yourusername</a></p>
-  </div>
+  <footer>
+    © 2025 Your Name
+  </footer>
 
 </body>
 </html>
