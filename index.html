@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Victor Benito — AI Portfolio</title>
-
   <style>
     :root {
       --bg: #0f172a;
@@ -16,25 +15,76 @@
     body {
       font-family: "Inter", sans-serif;
       margin: 0;
-      background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      background-color: var(--bg);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect width='120' height='120' fill='%230f172a'/%3E%3Cpolygon points='35%2C0 85%2C0 120%2C35 120%2C85 85%2C120 35%2C120 0%2C85 0%2C35' fill='none' stroke='%232ec4b6' stroke-width='3.5' stroke-opacity='0.7'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-attachment: fixed;
     }
 
     header {
-      padding: 50px 20px;
+      padding: 50px 20px 30px;
       text-align: center;
     }
 
+    .header-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 32px 28px;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .header-top {
+      text-align: center;
+    }
+
+    .languages {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: flex-end;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .lang-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-right: 4px;
+    }
+
+    .lang-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    .lang-item .flag {
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .lang-item .level {
+      font-size: 0.7rem;
+      color: #38bdf8;
+      font-weight: 500;
+    }
+
     h1 {
-      font-size: 3rem;
+      font-size: 2rem;
       margin-bottom: 10px;
       color: white;
     }
 
-    h2 {
-      color: var(--accent);
-    }
+    h2 { color: #38bdf8; }
 
     .container {
       max-width: 800px;
@@ -43,17 +93,14 @@
     }
 
     .card {
-      background: var(--card);
+      background: #1e293b;
       padding: 20px;
       border-radius: 12px;
       margin-bottom: 25px;
       border: 1px solid #334155;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    a { color: #38bdf8; text-decoration: none; }
 
     .project-title {
       margin: 0;
@@ -68,16 +115,40 @@
     }
   </style>
 </head>
-
 <body>
-
   <header>
-    <h1>Victor Benito</h1>
-    <p>AI Student • Machine Learning • LLMs • Data Science</p>
+    <div class="header-card">
+      <div class="header-top">
+        <h1>Victor Benito</h1>
+        <p>AI Student • Machine Learning • LLMs • Data Science</p>
+      </div>
+      <div class="languages">
+        <span class="lang-label">Languages:</span>
+        <div class="lang-item">
+          <span class="flag">🏴󠁥󠁳󠁣󠁴󠁿</span>
+          <span>Catalan</span>
+          <span class="level">Native</span>
+        </div>
+        <div class="lang-item">
+          <span class="flag">🇪🇸</span>
+          <span>Spanish</span>
+          <span class="level">Native</span>
+        </div>
+        <div class="lang-item">
+          <span class="flag">🇬🇧</span>
+          <span>English</span>
+          <span class="level">C1</span>
+        </div>
+        <div class="lang-item">
+          <span class="flag">🇩🇪</span>
+          <span>German</span>
+          <span class="level">B2</span>
+        </div>
+      </div>
+    </div>
   </header>
 
   <div class="container">
-
     <section>
       <h2>About Me</h2>
       <div class="card">
@@ -90,13 +161,11 @@
 
     <section>
       <h2>Projects</h2>
-
       <div class="card">
         <p class="project-title">⚡ Project 1 — Cool AI App</p>
         <p>A short description that explains what it does and what you learned.</p>
         <a href="#">View project →</a>
       </div>
-
       <div class="card">
         <p class="project-title">🔍 Project 2 — ML Model</p>
         <p>Explain what the model predicts, how you trained it, and tools used.</p>
@@ -115,16 +184,12 @@
       <h2>Contact</h2>
       <div class="card">
         <p>Email: victorbenitosegura@gmail.com</p>
-        <p>LinkedIn: <a href="#">linkedin.com/in/victor-benito-segura
-        <p>GitHub: <a href="#">github.com/Victorbs18
+        <p>LinkedIn: <a href="#">linkedin.com/in/victor-benito-segura</a></p>
+        <p>GitHub: <a href="#">github.com/Victorbs18</a></p>
       </div>
     </section>
-
   </div>
 
-  <footer>
-    © 2025 Your Name
-  </footer>
-
+  <footer>© 2025 Victor Benito</footer>
 </body>
 </html>
