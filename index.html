@@ -65,6 +65,7 @@
       max-width: 760px;
       margin: 0 auto;
       padding: 80px 48px 72px;
+      animation: fadeUp 0.6s ease both;
     }
 
     .hero-inner {
@@ -74,8 +75,8 @@
     }
 
     .hero-photo {
-      width: 130px;
-      height: 130px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
@@ -124,9 +125,7 @@
       border: 1px solid var(--text);
     }
 
-    .btn-primary:hover {
-      background: #333;
-    }
+    .btn-primary:hover { background: #333; }
 
     .btn-ghost {
       background: transparent;
@@ -134,9 +133,7 @@
       border: 1px solid var(--border);
     }
 
-    .btn-ghost:hover {
-      border-color: #aaa;
-    }
+    .btn-ghost:hover { border-color: #aaa; }
 
     /* DIVIDER */
     .divider {
@@ -151,6 +148,8 @@
       max-width: 760px;
       margin: 0 auto;
       padding: 64px 48px;
+      animation: fadeUp 0.6s ease both;
+      animation-delay: 0.1s;
     }
 
     .section-label {
@@ -200,11 +199,88 @@
       letter-spacing: 0.06em;
     }
 
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      gap: 16px;
+    /* ENTRIES — shared by Education, Research, Experience */
+    .entries { display: grid; gap: 28px; }
+
+    .entry {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
     }
+
+    /* Logo box */
+    .entry-logo {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 6px;
+      margin-top: 2px;
+    }
+
+    .entry-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .entry-body { flex: 1; }
+
+    .entry-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-bottom: 2px;
+    }
+
+    .entry-subtitle {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 2px;
+      letter-spacing: 0.02em;
+    }
+
+    .entry-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+
+    .entry-desc {
+      font-size: 0.88rem;
+      color: #555;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    .entry-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .entry-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .entry-link:hover { text-decoration: underline; }
+
+    .entry-links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px; }
+
+    /* PROJECTS */
+    .projects-grid { display: grid; gap: 16px; }
 
     .project-card {
       background: var(--card);
@@ -240,11 +316,7 @@
       margin-bottom: 14px;
     }
 
-    .project-tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
+    .project-tags { display: flex; gap: 8px; flex-wrap: wrap; }
 
     .tag {
       font-size: 0.72rem;
@@ -267,21 +339,6 @@
 
     .project-link:hover { color: var(--text); }
 
-    /* CV */
-    .cv-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .cv-text {
-      font-size: 0.95rem;
-      color: #444;
-      font-weight: 300;
-    }
-
     /* CONTACT */
     .contact-grid {
       display: grid;
@@ -294,6 +351,26 @@
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 20px 24px;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-item:hover {
+      border-color: #c5c0b8;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .contact-logo {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .contact-logo-github {
+      filter: invert(0);
     }
 
     .contact-platform {
@@ -301,18 +378,15 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .contact-value {
       font-size: 0.88rem;
       font-weight: 400;
       color: var(--text);
-      text-decoration: none;
       word-break: break-all;
     }
-
-    .contact-value:hover { color: var(--accent); }
 
     /* FOOTER */
     footer {
@@ -323,36 +397,34 @@
       color: var(--muted);
     }
 
-    /* FADE IN */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    .hero { animation: fadeUp 0.6s ease both; }
-    section { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
   </style>
 </head>
 <body>
 
   <nav>
-    <span class="nav-name">Victor Benito</span>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#research">Research</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#cv">CV</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
+  <!-- HERO -->
   <div class="hero">
     <div class="hero-inner">
       <img src="foto_orla.jpg" alt="Victor Benito" class="hero-photo" />
       <div class="hero-text">
-        <h1>Victor Benito</h1>
-        <p>Master's student in AI at JKU Linz, researching out-of-distribution generalization. Interested in computer vision, LLMs, and AI with real-world impact.</p>
+        <h1>Victor Benito Segura</h1>
+        <p>AI Master's student at JKU Linz with a background in mathematics and data analysis. Passionate about building intelligent systems with real-world impact.</p>
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">See my work</a>
+          <a href="#projects" class="btn btn-primary">Projects</a>
           <a href="cv.pdf" class="btn btn-ghost" target="_blank">Download CV</a>
         </div>
       </div>
@@ -361,25 +433,157 @@
 
   <hr class="divider" />
 
+  <!-- ABOUT -->
   <section id="about">
     <p class="section-label">About</p>
     <p class="about-text">
-      I'm <strong>Victor Benito</strong>, originally from Barcelona, currently based in Linz, Austria.
-      My Master's thesis at the <strong>LIT AI Lab</strong> focuses on whether invariant learning methods (IRM, VREx)
-      add meaningful value on top of large pretrained models like CLIP — tested on real-world distribution shift benchmarks.
+      I'm <strong>Victor</strong>, originally from Barcelona, currently based in Linz, Austria.
+      I'm completing my Master's in AI at <strong>JKU Linz</strong>, and currently working at <strong>Infineon Technologies</strong>.
       <br><br>
-      I also work as a working student at <strong>Infineon Technologies</strong>, where I build AI-powered tools including a RAG system and an LLM-based code assistant.
+      I'm passionate about analysing data and applying AI/ML to solve real problems and have a positive impact in society.
     </p>
+    <p class="section-label" style="margin-top: 40px;">Languages</p>
     <div class="langs">
       <div class="lang"><span class="lang-name">Catalan</span><span class="lang-level">Native</span></div>
       <div class="lang"><span class="lang-name">Spanish</span><span class="lang-level">Native</span></div>
-      <div class="lang"><span class="lang-name">English</span><span class="lang-level">C1</span></div>
-      <div class="lang"><span class="lang-name">German</span><span class="lang-level">C1.1</span></div>
+      <div class="lang">
+        <span class="lang-name">English</span>
+        <span class="lang-level">C1</span>
+      </div>
+      <div class="lang"><span class="lang-name">German</span><span class="lang-level">B2</span></div>
     </div>
   </section>
 
   <hr class="divider" />
 
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <p class="section-label">Professional Experience</p>
+    <div class="entries">
+
+      <div class="entry">
+        <div class="entry-logo">
+          <img src="https://th.bing.com/th/id/OIP.bArYFN9n1DkOI2-zpmhCdAHaE8?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Infineon Technologies" />
+        </div>
+        <div class="entry-body">
+          <p class="entry-title">Working Student — AI & Data Science</p>
+          <p class="entry-subtitle">Infineon Technologies</p>
+          <p class="entry-date">Apr 2025 – Present · Linz, Austria</p>
+          <p class="entry-desc">
+            Building a MATLAB application for processing and analysing simulation and test data from multiple sources, supporting engineers in chip investigations. Contributing AI-powered features including a RAG system for documentation retrieval and an LLM-based assistant for code support.
+          </p>
+          <div class="entry-tags">
+            <span class="tag">MATLAB</span>
+            <span class="tag">RAG</span>
+            <span class="tag">LLM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-logo" style="background:#fff;">
+          <img src="https://th.bing.com/th/id/R.0be6e14c66952b0ffadda49c81f76f73?rik=Geje0X8q%2brjWvQ&pid=ImgRaw&r=0" alt="Ricoh" />
+        </div>
+        <div class="entry-body">
+          <p class="entry-title">Business Analyst Intern</p>
+          <p class="entry-subtitle">Ricoh España</p>
+          <p class="entry-date">Jun 2023 – Jan 2024 · Sant Cugat del Vallès, Catalonia</p>
+          <p class="entry-desc">
+            Analysed financial data from multiple sources to identify trends, risks, and business opportunities, transforming and modelling it for accurate reporting. Built automated Power BI dashboards to streamline financial reporting and improve data visibility across the team. Presented findings and recommendations to managers, working closely with stakeholders to refine reporting workflows.
+          </p>
+          <div class="entry-tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Financial Reporting</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <p class="section-label">Education</p>
+    <div class="entries">
+
+      <div class="entry">
+        <div class="entry-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/JKU_Logo.svg/512px-JKU_Logo.svg.png" alt="JKU Linz" />
+        </div>
+        <div class="entry-body">
+          <p class="entry-title">Master's in Artificial Intelligence</p>
+          <p class="entry-subtitle">Johannes Kepler Universität Linz</p>
+          <p class="entry-date">Sep 2024 – Jun 2026</p>
+          <p class="entry-desc">Focus areas: Data Science, Deep Learning, and Machine Learning research.</p>
+          <a class="entry-link" href="https://www.jku.at/en/degree-programs/types-of-degree-programs/masters-degree-programs/ma-artificial-intelligence/" target="_blank">Programme info →</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Autonome_Universit%C3%A4t_Barcelona_Logo.svg/512px-Autonome_Universit%C3%A4t_Barcelona_Logo.svg.png" alt="UAB Barcelona" />
+        </div>
+        <div class="entry-body">
+          <p class="entry-title">Bachelor's in Computational Mathematics and Data Analysis</p>
+          <p class="entry-subtitle">Universitat Autònoma de Barcelona</p>
+          <p class="entry-date">Sep 2020 – Jun 2024</p>
+          <p class="entry-desc">Core topics: Data Analysis, Data Science, Machine Learning, Statistics, and Mathematical Modelling.</p>
+          <a class="entry-link" href="https://www.uab.cat/web/estudiar/ehea-degrees/general-information-1216708259085.html?param1=1345740824235" target="_blank">Programme info →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <p class="section-label">Academic Research</p>
+    <div class="entries">
+
+      <div class="entry">
+        <div class="entry-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/JKU_Logo.svg/512px-JKU_Logo.svg.png" alt="JKU Linz" />
+        </div>
+        <div class="entry-body">
+          <p class="entry-title">Master's Thesis</p>
+          <p class="entry-subtitle">JKU Linz · Supervised by Werner Zellinger</p>
+          <p class="entry-date">2025 – 2026</p>
+          <p class="entry-desc">Research on out-of-distribution generalization and domain shift, evaluating the contribution of invariant learning on top of large pretrained vision models.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Autonome_Universit%C3%A4t_Barcelona_Logo.svg/512px-Autonome_Universit%C3%A4t_Barcelona_Logo.svg.png" alt="UAB Barcelona" />
+        </div>
+        <div class="entry-body">
+          <p class="entry-title">Understanding Convolutional Neural Networks</p>
+          <p class="entry-subtitle">Bachelor's Thesis · Universitat Autònoma de Barcelona · Supervised by Maria Vanrell & Guillem Arias</p>
+          <p class="entry-date">2022 – 2023</p>
+          <p class="entry-desc">
+            Investigated the internal workings of CNNs by parameterizing activation functions (sigmoid and Gaussian) to generate synthetic images that maximally activate individual neurons. Applied Simulated Annealing to search the parameter space, and built a toolset to sort and classify neurons across layers of VGG-16 — offering an interpretability lens on what each layer learns.
+          </p>
+          <div class="entry-tags">
+            <span class="tag">CNN</span>
+            <span class="tag">Interpretability</span>
+            <span class="tag">VGG-16</span>
+            <span class="tag">Simulated Annealing</span>
+          </div>
+          <a class="entry-link" href="https://github.com/Victorbs18/Understanding-Convolutional-Neural-Networks" target="_blank">GitHub →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- PROJECTS -->
   <section id="projects">
     <p class="section-label">Projects</p>
     <div class="projects-grid">
@@ -428,35 +632,33 @@
 
   <hr class="divider" />
 
-  <section id="cv">
-    <p class="section-label">CV</p>
-    <div class="cv-row">
-      <p class="cv-text">Master's in AI at JKU Linz (graduating July 2026). Bachelor's in Computational Mathematics & Data Analysis, UAB Barcelona. Working student at Infineon Technologies.</p>
-      <a href="cv.pdf" class="btn btn-ghost" target="_blank">Download PDF</a>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
+  <!-- CONTACT -->
   <section id="contact">
     <p class="section-label">Contact</p>
     <div class="contact-grid">
-      <div class="contact-item">
+
+      <a class="contact-item" href="mailto:victorbenitosegura@gmail.com">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png" alt="Gmail" class="contact-logo" />
         <p class="contact-platform">Email</p>
-        <a class="contact-value" href="mailto:victorbenitosegura@gmail.com">victorbenitosegura@gmail.com</a>
-      </div>
-      <div class="contact-item">
+        <p class="contact-value">victorbenitosegura@gmail.com</p>
+      </a>
+
+      <a class="contact-item" href="https://linkedin.com/in/victor-benito-segura" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/480px-LinkedIn_logo_initials.png" alt="LinkedIn" class="contact-logo" />
         <p class="contact-platform">LinkedIn</p>
-        <a class="contact-value" href="https://linkedin.com/in/victor-benito-segura" target="_blank">victor-benito-segura</a>
-      </div>
-      <div class="contact-item">
+        <p class="contact-value">victor-benito-segura</p>
+      </a>
+
+      <a class="contact-item" href="https://github.com/Victorbs18" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="contact-logo contact-logo-github" />
         <p class="contact-platform">GitHub</p>
-        <a class="contact-value" href="https://github.com/Victorbs18" target="_blank">Victorbs18</a>
-      </div>
+        <p class="contact-value">Victorbs18</p>
+      </a>
+
     </div>
   </section>
 
-  <footer>© 2025 Victor Benito · Linz, Austria</footer>
+  <footer>© 2026 Victor Benito Segura · Linz, Austria | Barcelona, Spain</footer>
 
 </body>
 </html>
