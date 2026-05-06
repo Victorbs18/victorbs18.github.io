@@ -1,5 +1,5 @@
 ### Project Description
 
-Personal portfolio website built with vanilla HTML & CSS.
+Personal portfolio website.
 
 [victorbs18.github.io](https://victorbs18.github.io)
