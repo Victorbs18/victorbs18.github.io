@@ -1,4 +1,4 @@
-# Project Description
+### Project Description
 
 Personal portfolio website built with vanilla HTML & CSS.
 
